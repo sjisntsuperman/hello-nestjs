@@ -1,0 +1,17 @@
+version: '3'
+services:
+  mysql:
+    image: mysql:latest
+    container_name: nest-admin-mysql
+    restart: always
+    env_file: 
+      - .env
+      - .env.production
+    ports:
+      - '3306:3306'
+    command: mysqld --character-set-server=utf8mb4 --collation-server=utf8mb4_unicode_ci #设置utf8字符集
+    volumes:
+      - ./var/lib/mysql/:/var/lib/mysql/ # ./docs/sample/mysql/路径可以替换成自己的路径
+      - ./sql/:/docker-entrypoint-initdb.d/ # 初始化的脚本
+    networks:
+      - hello_nestjs_net
