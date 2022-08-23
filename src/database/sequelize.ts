@@ -7,6 +7,7 @@ const sequelize = new Sequelize(
   db.mysql.password || null,
   {
     host: db.mysql.host,
+    port: db.mysql.port,
     dialect: 'mysql',
     pool: {
       max: db.mysql.connectionLimit,

@@ -13,7 +13,6 @@ RUN yarn config set registry https://r.npm.taobao.org/
 
 # install & build
 COPY . .
-
 RUN yarn install
 RUN yarn build
 # clean dev dep
@@ -21,7 +20,6 @@ RUN yarn install --production
 RUN yarn cache clean
 
 RUN yarn global add pm2
-
 
 # httpserver set port
 EXPOSE 7001

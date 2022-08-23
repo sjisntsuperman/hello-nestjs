@@ -6,6 +6,7 @@ import { TransformInterceptor } from './interceptor/transform.interceptor';
 import { SwaggerModule, DocumentBuilder } from '@nestjs/swagger';
 
 import { logger } from './middleware/logger.middleware';
+import { AnyExceptionFilter } from './filter/any-exception.filter';
 
 async function bootstrap() {
   const app = await NestFactory.create(AppModule);
@@ -17,6 +18,7 @@ async function bootstrap() {
   app.useGlobalInterceptors(new TransformInterceptor());
   app.setGlobalPrefix('hello-nestjs');
   // filter
+  app.useGlobalFilters(new AnyExceptionFilter());
   app.useGlobalFilters(new HttpExceptionFilter());
   // swagger
   const options = new DocumentBuilder()
@@ -27,6 +29,6 @@ async function bootstrap() {
     .build();
   const document = SwaggerModule.createDocument(app, options);
   SwaggerModule.setup('api-doc', app, document);
-  await app.listen(3000);
+  await app.listen(7001);
 }
 bootstrap();

@@ -3,6 +3,7 @@ lockfileVersion: 5.4
 specifiers:
   '@nestjs/cli': ^9.0.0
   '@nestjs/common': ^9.0.0
+  '@nestjs/config': ^2.2.0
   '@nestjs/core': ^9.0.0
   '@nestjs/jwt': ^9.0.0
   '@nestjs/passport': ^9.0.0
@@ -23,6 +24,7 @@ specifiers:
   eslint: ^8.0.1
   eslint-config-prettier: ^8.3.0
   eslint-plugin-prettier: ^4.0.0
+  express: ^4.18.1
   ioredis: ^5.2.2
   jest: 28.1.2
   log4js: ^6.6.1
@@ -48,6 +50,7 @@ specifiers:
 
 dependencies:
   '@nestjs/common': registry.npmmirror.com/@nestjs/common/9.0.11_c3ywp5uae7mfm5pv3l6tu7kcju
+  '@nestjs/config': registry.npmmirror.com/@nestjs/config/2.2.0_3mdbamkp7cmelffjfexsjo7tau
   '@nestjs/core': registry.npmmirror.com/@nestjs/core/9.0.11_psficsz3mqirqwo2ujbfhdr2aa
   '@nestjs/jwt': registry.npmmirror.com/@nestjs/jwt/9.0.0_@nestjs+common@9.0.11
   '@nestjs/passport': registry.npmmirror.com/@nestjs/passport/9.0.0_qmmxbt2dwte7f4tgsyyoa7ob5i
@@ -56,6 +59,7 @@ dependencies:
   chalk: registry.npmmirror.com/chalk/4.1.2
   class-validator: registry.npmmirror.com/class-validator/0.13.2
   dayjs: registry.npmmirror.com/dayjs/1.11.5
+  express: registry.npmmirror.com/express/4.18.1
   ioredis: registry.npmmirror.com/ioredis/5.2.2
   log4js: registry.npmmirror.com/log4js/6.6.1
   mysql2: registry.npmmirror.com/mysql2/2.3.3
@@ -68,7 +72,7 @@ dependencies:
   sequelize: registry.npmmirror.com/sequelize/6.21.4_mysql2@2.3.3
   sequelize-typescript: registry.npmmirror.com/sequelize-typescript/2.1.3_37vaosu4okjxc33yfw3hmgupqq
   stacktrace-js: registry.npmmirror.com/stacktrace-js/2.0.2
-  swagger-ui-express: registry.npmmirror.com/swagger-ui-express/4.5.0
+  swagger-ui-express: registry.npmmirror.com/swagger-ui-express/4.5.0_express@4.18.1
 
 devDependencies:
   '@nestjs/cli': registry.npmmirror.com/@nestjs/cli/9.0.0
@@ -1062,6 +1066,25 @@ packages:
       tslib: registry.npmmirror.com/tslib/2.4.0
       uuid: registry.npmmirror.com/uuid/8.3.2
 
+  registry.npmmirror.com/@nestjs/config/2.2.0_3mdbamkp7cmelffjfexsjo7tau:
+    resolution: {integrity: sha512-78Eg6oMbCy3D/YvqeiGBTOWei1Jwi3f2pSIZcZ1QxY67kYsJzTRTkwRT8Iv30DbK0sGKc1mcloDLD5UXgZAZtg==, registry: https://r.npm.taobao.org/, tarball: https://registry.npmmirror.com/@nestjs/config/-/config-2.2.0.tgz}
+    id: registry.npmmirror.com/@nestjs/config/2.2.0
+    name: '@nestjs/config'
+    version: 2.2.0
+    peerDependencies:
+      '@nestjs/common': ^7.0.0 || ^8.0.0 || ^9.0.0
+      reflect-metadata: ^0.1.13
+      rxjs: ^6.0.0 || ^7.2.0
+    dependencies:
+      '@nestjs/common': registry.npmmirror.com/@nestjs/common/9.0.11_c3ywp5uae7mfm5pv3l6tu7kcju
+      dotenv: registry.npmmirror.com/dotenv/16.0.1
+      dotenv-expand: registry.npmmirror.com/dotenv-expand/8.0.3
+      lodash: registry.npmmirror.com/lodash/4.17.21
+      reflect-metadata: registry.npmmirror.com/reflect-metadata/0.1.13
+      rxjs: registry.npmmirror.com/rxjs/7.5.6
+      uuid: registry.npmmirror.com/uuid/8.3.2
+    dev: false
+
   registry.npmmirror.com/@nestjs/core/9.0.11_psficsz3mqirqwo2ujbfhdr2aa:
     resolution: {integrity: sha512-DYyoiWSGebDAG8WSfG/ue88HBU39kAJTi2YXftWdVSl1LFveV+pwKY83P2qX0ND38TS8WktFYpaMkXslf97BBQ==, registry: https://r.npm.taobao.org/, tarball: https://registry.npmmirror.com/@nestjs/core/-/core-9.0.11.tgz}
     id: registry.npmmirror.com/@nestjs/core/9.0.11
@@ -1565,7 +1588,7 @@ packages:
   registry.npmmirror.com/@types/superagent/4.1.15:
     resolution: {integrity: sha512-iiXaOL2wSbnSY4qg0mFPWJHL9iwyEsoNYwaHF2w58/fsVAQJlj+KUfFAFZu+nzbz+b7dUprJEAc+O9vhHHhQTA==, registry: https://r.npm.taobao.org/, tarball: https://registry.npmmirror.com/@types/superagent/-/superagent-4.1.14.tgz}
     name: '@types/superagent'
-    version: 4.1.14
+    version: 4.1.15
     deprecated: '[WARNING] Use 4.1.14 instead of 4.1.15, reason: https://github.com/DefinitelyTyped/DefinitelyTyped/issues/58445'
     dependencies:
       '@types/cookiejar': registry.npmmirror.com/@types/cookiejar/2.1.2
@@ -2795,6 +2818,20 @@ packages:
     dependencies:
       esutils: registry.npmmirror.com/esutils/2.0.3
     dev: true
+
+  registry.npmmirror.com/dotenv-expand/8.0.3:
+    resolution: {integrity: sha512-SErOMvge0ZUyWd5B0NXMQlDkN+8r+HhVUsxgOO7IoPDOdDRD2JjExpN6y3KnFR66jsJMwSn1pqIivhU5rcJiNg==, registry: https://r.npm.taobao.org/, tarball: https://registry.npmmirror.com/dotenv-expand/-/dotenv-expand-8.0.3.tgz}
+    name: dotenv-expand
+    version: 8.0.3
+    engines: {node: '>=12'}
+    dev: false
+
+  registry.npmmirror.com/dotenv/16.0.1:
+    resolution: {integrity: sha512-1K6hR6wtk2FviQ4kEiSjFiH5rpzEVi8WW0x96aztHVMhEspNpc4DVOUTEHtEva5VThQ8IaBX1Pe4gSzpVVUsKQ==, registry: https://r.npm.taobao.org/, tarball: https://registry.npmmirror.com/dotenv/-/dotenv-16.0.1.tgz}
+    name: dotenv
+    version: 16.0.1
+    engines: {node: '>=12'}
+    dev: false
 
   registry.npmmirror.com/dottie/2.0.2:
     resolution: {integrity: sha512-fmrwR04lsniq/uSr8yikThDTrM7epXHBAAjH9TbeH3rEA8tdCO7mRzB9hdmdGyJCxF8KERo9CITcm3kGuoyMhg==, registry: https://r.npm.taobao.org/, tarball: https://registry.npmmirror.com/dottie/-/dottie-2.0.2.tgz}
@@ -6219,14 +6256,16 @@ packages:
     version: 4.14.0
     dev: false
 
-  registry.npmmirror.com/swagger-ui-express/4.5.0:
+  registry.npmmirror.com/swagger-ui-express/4.5.0_express@4.18.1:
     resolution: {integrity: sha512-DHk3zFvsxrkcnurGvQlAcLuTDacAVN1JHKDgcba/gr2NFRE4HGwP1YeHIXMiGznkWR4AeS7X5vEblNn4QljuNA==, registry: https://r.npm.taobao.org/, tarball: https://registry.npmmirror.com/swagger-ui-express/-/swagger-ui-express-4.5.0.tgz}
+    id: registry.npmmirror.com/swagger-ui-express/4.5.0
     name: swagger-ui-express
     version: 4.5.0
     engines: {node: '>= v0.10.32'}
     peerDependencies:
       express: '>=4.0.0'
     dependencies:
+      express: registry.npmmirror.com/express/4.18.1
       swagger-ui-dist: registry.npmmirror.com/swagger-ui-dist/4.14.0
     dev: false
 

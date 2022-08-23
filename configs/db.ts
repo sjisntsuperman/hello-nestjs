@@ -1,8 +1,8 @@
 // config/db.ts
 const productConfig = {
   mysql: {
-    port: '3306',
-    host: 'localhost',
+    port: 33066,
+    host: 'mysql',
     user: 'root',
     password: '123456',
     database: 'hello_nestjs', // 库名
@@ -10,7 +10,7 @@ const productConfig = {
   },
   redis: {
     port: 6379,
-    host: 'localhost',
+    host: 'redis',
     db: 0,
     password: '123456',
   },
@@ -18,8 +18,8 @@ const productConfig = {
 
 const localConfig = {
   mysql: {
-    port: '3306',
-    host: 'localhost',
+    port: 33066,
+    host: '127.0.0.1',
     user: 'root',
     password: '123456',
     database: 'hello_nestjs', // 库名
@@ -27,13 +27,14 @@ const localConfig = {
   },
   redis: {
     port: 6379,
-    host: 'localhost',
+    host: '127.0.0.1',
     db: 0,
     password: '123456',
   },
 };
 
 // 本地运行是没有 process.env.NODE_ENV 的，借此来区分[开发环境]和[生产环境]
-const config = process.env.NODE_ENV ? productConfig : localConfig;
+const config =
+  process.env.NODE_ENV == 'production' ? productConfig : localConfig;
 
 export default config;
